@@ -1,5 +1,6 @@
 import tensorflow as tf
 import numpy as np
+from skimage.transform import resize
 
 file_path = '../data/fer2013/'
 
@@ -27,6 +28,19 @@ def parse_data():
     np.save(file_path + "validation_y.npy", validation_y)
     np.save(file_path + "test_X.npy", test_X)
     np.save(file_path + "test_y.npy", test_y)
+
+
+def image_resize(images):
+    n, d = images.shape
+    images = images.reshape([-1, 48, 48, 1])
+    resized_images = [resize(images[i], [42, 42]) for i in range(n)]
+    resized_images = np.reshape(resized_images, [n, -1])
+    return resized_images
+
+if __name__ == '__main__':
+    train_X = np.load('../data/fer2013/' + 'test_X.npy')
+    images = image_resize(train_X[:10, :])
+    print(images.shape)
 
 
 
