@@ -1,2 +1,2 @@
-# face-detection-emotion-classification
-Face detection and Emotion classification project
+# ml-project
+Image Denoising, Face Recognition and Emotion Classification ML Project
