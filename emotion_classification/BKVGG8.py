@@ -6,10 +6,10 @@ from input_data import image_resize
 learning_rate = 0.1
 momentum = 0.9
 batch_size = 256
-display_steps = 10
+display_steps = 100
 num_steps = 10000
 
-log_dir = "tmp/bkvgg8"
+log_dir = "tmp/bkvgg8/"
 file_path = "../data/fer2013/"
 
 image_size = 42
@@ -147,7 +147,7 @@ saver = tf.train.Saver()
 with tf.Session() as sess:
     sess.run([init, local_init])
 
-    saver.restore(sess, log_dir)
+    #saver.restore(sess, log_dir)
 
     train_X = np.load(file_path + 'resized_train_X.npy')
     train_y = np.load(file_path + 'train_y.npy')
@@ -164,7 +164,6 @@ with tf.Session() as sess:
     file_writer = tf.summary.FileWriter(logdir=log_dir, graph=tf.get_default_graph())
 
     for i in range(num_steps + 1):
-
         batch_x, batch_y = sess.run(next_items)
         _, summary = sess.run([train_op, merged_summary], feed_dict={X: batch_x, y: batch_y})
 
