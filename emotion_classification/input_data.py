@@ -38,9 +38,9 @@ def image_resize(images):
     return resized_images
 
 if __name__ == '__main__':
-    train_X = np.load('../data/fer2013/' + 'test_X.npy')
-    images = image_resize(train_X[:10, :])
-    print(images.shape)
+    train_X = np.load('../data/fer2013/' + 'train_X.npy')
+    images = image_resize(train_X)
+    np.save("../data/fer2013/resized_train_X.npy", images)
 
 
 
