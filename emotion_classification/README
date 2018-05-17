@@ -1,0 +1,24 @@
+**Training Statistics**
+
+Without Preprocessing
+VGG8 - 94% on training, 55% on validation, 54% on test
+VGG10 - 96% on training, 56% on validation,56% on test
+VGG12 - 95% on training, 58% on validation, 58% on test
+VGG14 - 94% on training, 58% on validation, 58% on test
+
+With Ensembles
+62% on test
+
+With preprocessing
+VGG8 - 97% on training, 59% on validation, 58% on test
+VGG12 - 98% on training, 60% on validation, 59% on test
+VGG14 - 98% on training, 59% on validation, 59% on test
+
+VGG8_TF - 74% on training, 54% on validation
+
+With preprocessing and denoising
+VGG8 - 98% on training, 58% on validation, 57% on test
+
+With preprocessing and augmentation
+VGG8 - 70% on training, 64% on validation, 63% on test
+VGG12 - 64% on training, 63% on validation, 63% on test
